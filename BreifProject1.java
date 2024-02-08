@@ -13,10 +13,20 @@ public class BreifProject1 {
         //Student[] students = new Student[35];
         
         int choice;
+        String username,password;
         
         //------------------------------------------------------------------------------
         System.out.println("Welcome to the school management software !\n\n");
         
+        System.out.println("Please enter your login credentials !\n");
+        
+        System.out.println("Username : ");
+        username = scanner.nextLine();
+        System.out.println("Password : ");
+        password = scanner.nextLine();
+        
+     if (username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin") ){
+   
         do{
          System.out.println("Main Menu\n");
          
@@ -74,8 +84,9 @@ public class BreifProject1 {
       	 		 System.out.println("Invalid choice, Please type a number from the list above.\n");
     					}
 	}while (choice != 0);
-         
-         
-         
+        
+        }else{//authentification 
+         System.out.println("password or username are incorrect");
+     }
     }
 }
