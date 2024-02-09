@@ -46,13 +46,31 @@ public class Student {
             if (studentCount == 0) {
             System.out.println("\nNo students to show, list is empty !\n");
         }//condition if
-            while (i < studentCount){
-                System.out.println("\n---------------------------------------------------\n");
+            while (i < studentCount - 1){
+                System.out.println("---------------------------------------------------");
                 System.out.printf("Student #%d:\n", i);
-                System.out.printf("full Name: %S  %S\n",students[i].studentName ,students[i].studentLastName);
+                System.out.printf("Full Name: %S  %S\n",students[i].studentName ,students[i].studentLastName);
                 System.out.printf("Phone: %s \n",students[i].studentPhone);
                 System.out.printf("Address: %s\n", students[i].address);
                 i++;
             }//while
        }//method
+        //--------------------------------------------------------------------------------
+        public static void DeleteStudent(Student[] students){
+            int studentNOtodelete= 0;
+            
+            if (studentCount == 0) {
+            System.out.println("\nNo students to delete !\n");
+        }//condition if
+            while (studentNOtodelete < studentCount + 1){
+                System.out.println("Please enter the students name that you want to delete : \n");
+                studentNOtodelete = scanner.nextInt();
+                
+                students[studentNOtodelete] = students[studentNOtodelete + 1] ;
+                studentCount--;
+                System.out.printf("Student number %d has been deleted successfully.\n", studentNOtodelete);
+                break;
+            }//while
+                    System.out.printf("Student Number is out of Range, please put a number that is within 0 and %d",studentCount);
+        }
 }

@@ -17,14 +17,14 @@ public class Classe {
         if (classescount < classes.length) {
             classes[classescount] = new Classe(); 
 
-            System.out.printf("Enter class's details for class #%d.  ",classescount);
+            System.out.printf("Enter class's details for class #%d.  \n",classescount);
             
-            System.out.print("\nclass's Name: ");
+            System.out.print("class's Name: ");
             classes[classescount].nomclass = scanner.nextLine();
 
             System.out.print("Class's Number of students: ");
             classes[classescount].NumOFstudents = scanner.nextInt();
-            
+            scanner.nextLine();
             System.out.println("Class added successfully !");
             classescount++;
         } else {
@@ -38,7 +38,7 @@ public class Classe {
         }//condition if
             while (i < classescount){
                 System.out.println("\n---------------------------------------------------\n");
-                System.out.printf("Student #%d:\n", i);
+                System.out.printf("Class #%d:\n", i);
                 System.out.printf("Class's Name: %S \n",classes[i].nomclass );
                 System.out.printf("Number of students: %d\n", classes[i].NumOFstudents);
                 i++;
