@@ -69,7 +69,7 @@ public class BreifProject1 {
                             Classe.addClasses(classes);
   			} else if (choice == 7) {
   				  System.out.println("\n== Editing a class's details ==\n");
-        		//
+                            Classe.EditClass(classes);
   			} else if (choice == 8) {
   				 System.out.println("\n== Deleting an existing class ==\n");
                             Classe.DeleteClasse(classes);

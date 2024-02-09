@@ -46,7 +46,7 @@ public class Student {
             if (studentCount == 0) {
             System.out.println("\nNo students to show, list is empty !\n");
         }//condition if
-            while (i < studentCount - 1){
+            while (i < studentCount && studentCount != 0){
                 System.out.println("---------------------------------------------------");
                 System.out.printf("Student #%d:\n", i);
                 System.out.printf("Full Name: %S  %S\n",students[i].studentName ,students[i].studentLastName);
@@ -56,29 +56,29 @@ public class Student {
             }//while
        }//method
         //--------------------------------------------------------------------------------
-        public static void DeleteStudent(Student[] students){
-            int studentNOtodelete= 0;
-            
-            if (studentCount == 0) {
-             System.out.println("\nNo students to delete !\n");
-            }//condition if
-            while (studentNOtodelete < studentCount + 1){
-                System.out.println("Please enter the students number that you want to delete : \n");
-                studentNOtodelete = scanner.nextInt();
-                
+        public static void DeleteStudent(Student[] students) {
+            int studentNOtodelete = 0;
+        if (studentCount == 0) {
+            System.out.println("\nNo students to delete !\n");
+        } else {
+            System.out.println("Please enter the student number that you want to delete:");
+             studentNOtodelete = scanner.nextInt();
+
+            if (studentNOtodelete < 0 || studentNOtodelete >= studentCount) {
+                System.out.printf("Student Number is out of Range, please put a number that is within 0 and %d\n", studentCount );
+            } else {
                 students[studentNOtodelete] = students[studentNOtodelete + 1] ;
                 studentCount--;
                 System.out.printf("Student number %d has been deleted successfully.\n", studentNOtodelete);
-                break;
-            }//while
-                    System.out.printf("Student Number is out of Range, please put a number that is within 0 and %d",studentCount);
+            }
+        }
         }
         //--------------------------------------------------------------------------------
         public static void EditStudent(Student[] students){
             int studentNOtoedit = 0;
             
             if (studentCount == 0) {
-            System.out.println("\nNo students to delete !\n");
+            System.out.println("\nNo students to edit !\n");
             }while (studentNOtoedit < studentCount ){
                 System.out.println("Please enter the students number that you want to edit : \n");
                 studentNOtoedit = scanner.nextInt();

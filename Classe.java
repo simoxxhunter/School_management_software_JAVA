@@ -37,7 +37,7 @@ public class Classe {
             if (classescount == 0) {
             System.out.println("\nNo students to show, list is empty !\n");
         }//condition if
-            while (i < classescount - 1){
+            while (i <= classescount -1 && classescount != 0 ){
                 System.out.println("\n---------------------------------------------------\n");
                 System.out.printf("Class #%d:\n", i);
                 System.out.printf("Class's Name: %S \n",classes[i].nomclass );
@@ -51,16 +51,37 @@ public class Classe {
             
             if (classescount == 0) {
             System.out.println("\nNo classes to delete !\n");
-        }//condition if
-            while (classNOtodelete < classescount + 1){
+            }else if (classNOtodelete < classescount + 1){
                 System.out.println("Please enter the class number that you want to delete : \n");
                 classNOtodelete = scanner.nextInt();
                 
                 classes[classNOtodelete] = classes[classNOtodelete + 1] ;
                 classescount--;
                 System.out.printf("Class number %d has been deleted successfully.\n", classNOtodelete);
+                //break;
+            }//while
+                    System.out.printf("Class Number is out of Range, please put a number that is within 0 and %d\n",classNOtodelete);
+        }
+    //------------------------------------------------------------------------------------------------
+    public static void EditClass(Classe[] classes){
+            int classNOtoedit = 0;
+            
+            if (classescount == 0) {
+            System.out.println("\nNo classes to edit !\n");
+            }while (classNOtoedit < classescount ){
+                System.out.println("Please enter the class number that you want to edit : \n");
+                classNOtoedit = scanner.nextInt();
+               
+                System.out.println("Please enter the class new name : \n");
+                classes[classNOtoedit].nomclass= scanner.nextLine();
+                System.out.println("Please enter the class new number of students : \n");
+                classes[classNOtoedit].NumOFstudents = scanner.nextInt();
+               
+               
+                System.out.printf("class number %d information have been edited successfully.\n", classNOtoedit);
                 break;
             }//while
-                    System.out.printf("Class Number is out of Range, please put a number that is within 0 and %d",classNOtodelete);
-        }
+                    System.out.printf("class Number is out of Range, please put a number that is within 0 and %d",classescount);
+        }//method
+            
 }
