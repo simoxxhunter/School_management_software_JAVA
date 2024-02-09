@@ -60,10 +60,10 @@ public class Student {
             int studentNOtodelete= 0;
             
             if (studentCount == 0) {
-            System.out.println("\nNo students to delete !\n");
-        }//condition if
+             System.out.println("\nNo students to delete !\n");
+            }//condition if
             while (studentNOtodelete < studentCount + 1){
-                System.out.println("Please enter the students name that you want to delete : \n");
+                System.out.println("Please enter the students number that you want to delete : \n");
                 studentNOtodelete = scanner.nextInt();
                 
                 students[studentNOtodelete] = students[studentNOtodelete + 1] ;
@@ -73,4 +73,31 @@ public class Student {
             }//while
                     System.out.printf("Student Number is out of Range, please put a number that is within 0 and %d",studentCount);
         }
+        //--------------------------------------------------------------------------------
+        public static void EditStudent(Student[] students){
+            int studentNOtoedit = 0;
+            
+            if (studentCount == 0) {
+            System.out.println("\nNo students to delete !\n");
+            }while (studentNOtoedit < studentCount ){
+                System.out.println("Please enter the students number that you want to edit : \n");
+                studentNOtoedit = scanner.nextInt();
+                
+                System.out.println("Please enter the students new name : \n");
+                students[studentNOtoedit].studentName = scanner.nextLine();
+                System.out.println("Please enter the students new last name : \n");
+                students[studentNOtoedit].studentLastName= scanner.nextLine();
+                System.out.println("Please enter the students new phone number : \n");
+                students[studentNOtoedit].studentPhone = scanner.nextLine();
+                System.out.println("Please enter the students new adress of residence : \n");
+                students[studentNOtoedit].address = scanner.nextLine();
+               
+                System.out.printf("Student number %d information have been edited successfully.\n", studentNOtoedit);
+                break;
+            }//while
+                    System.out.printf("Student Number is out of Range, please put a number that is within 0 and %d",studentCount);
+        }
+            
+        
+        
 }

@@ -31,12 +31,13 @@ public class Classe {
             System.out.println("Maximum number of classes reached.");
         }
     }
+    //-------------------------------------------------------------------------------------------
     public static void ListClasses(Classe[] classes) {
             int i = 0;
             if (classescount == 0) {
             System.out.println("\nNo students to show, list is empty !\n");
         }//condition if
-            while (i < classescount){
+            while (i < classescount - 1){
                 System.out.println("\n---------------------------------------------------\n");
                 System.out.printf("Class #%d:\n", i);
                 System.out.printf("Class's Name: %S \n",classes[i].nomclass );
@@ -44,4 +45,22 @@ public class Classe {
                 i++;
             }//while
        }//method
+    //------------------------------------------------------------------------------------------------
+    public static void DeleteClasse(Classe[] classes){
+            int classNOtodelete= 0;
+            
+            if (classescount == 0) {
+            System.out.println("\nNo classes to delete !\n");
+        }//condition if
+            while (classNOtodelete < classescount + 1){
+                System.out.println("Please enter the class number that you want to delete : \n");
+                classNOtodelete = scanner.nextInt();
+                
+                classes[classNOtodelete] = classes[classNOtodelete + 1] ;
+                classescount--;
+                System.out.printf("Class number %d has been deleted successfully.\n", classNOtodelete);
+                break;
+            }//while
+                    System.out.printf("Class Number is out of Range, please put a number that is within 0 and %d",classNOtodelete);
+        }
 }

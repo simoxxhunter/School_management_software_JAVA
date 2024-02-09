@@ -54,7 +54,7 @@ public class BreifProject1 {
                             Student.addStudent(students);
  			} else if (choice == 2) {
  				 System.out.println("\n== Editing a student details ==\n");
-                        //    Student.ListStudents(students);
+                            Student.EditStudent(students);
   			} else if (choice == 3) {
   				  System.out.println("\n== Deleting a student ==\n");
                             Student.DeleteStudent(students);
@@ -72,7 +72,7 @@ public class BreifProject1 {
         		//
   			} else if (choice == 8) {
   				 System.out.println("\n== Deleting an existing class ==\n");
-                            //
+                            Classe.DeleteClasse(classes);
   			} else if (choice == 9) {
   				 System.out.println("\n== Listing all classes ==\n");
                             Classe.ListClasses(classes);
