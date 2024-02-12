@@ -1,4 +1,7 @@
 package com.mycompany.breifproject1;
+import static com.mycompany.breifproject1.Student.addStudent;
+import static com.mycompany.breifproject1.Student.scanner;
+import static com.mycompany.breifproject1.Student.studentCount;
 import java.util.Scanner;
 
 //------------------------------------------------------------------------------
@@ -7,8 +10,37 @@ public class BreifProject1 {
    
     public static Student[] students = new Student[35];
     public static Classe[] classes = new Classe[10];
-     
+    
+    public static boolean datevalidator(int year,int month, int day){
+        if (year > 1990 && year < 2010 && month > 0 && month < 13  && day > 0 && day < 32){
+            return true;
+            
+        } else {
+             return false;
+        } 
+    }
+         //------------------------------------------------------------------------------
+    public static int phonevalidator(String phoneNO,String phoneNON ){
+        
+        if (phoneNO.length() == 8){
+            students[studentCount].studentPhone = phoneNON;
+            //scanner.nextLine();
+            System.out.print("phone number added succesfully !\n");
+            
+            //scanner.nextLine();
+          // return 0;
+        } else if (phoneNO.length() != 8){
+            System.out.print("Wrong phone number entered, please enter the student info again !"); 
+            //scanner.nextLine();
+            addStudent(students); 
+            scanner.nextLine();
+        } 
+        return 0;
+    }
+        
+          //------------------------------------------------------------------------------
     public static void main(String[] args) {
+        
         Scanner scanner = new Scanner(System.in);
         //Student[] students = new Student[35];
         
