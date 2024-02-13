@@ -159,6 +159,56 @@ public class Student {
                     System.out.printf("Student Number is out of Range, please put a number that is within 0 and %d",studentCount);
         }
             
+        //--------------------------------------------------------------------------------
+        public static void search(Student[] students) {
+        int i = 0;
+        String firstName,lastName;
+
+        System.out.println("Enter the first name of the student to search: ");
+        firstName = scanner.nextLine();
+
+        System.out.println("Enter the last name of the student to search: ");
+        lastName = scanner.nextLine();
         
-        
+        while (i < studentCount) {
+            if (students[i].studentName.equalsIgnoreCase(firstName) && students[i].studentLastName.equalsIgnoreCase(lastName)) {
+                System.out.println("Student found!");
+                System.out.println("Student Details:");
+                System.out.printf("Student #%d:\n", i);
+                System.out.printf("Full Name: %S  %S\n",students[i].studentName ,students[i].studentLastName);
+                System.out.printf("Phone: %s \n",students[i].studentPhone);
+                System.out.printf("Address: %s\n", students[i].address);
+                System.out.printf("Class number: %s\n", students[i].numclass.numclass);
+                System.out.printf("Date of birth: %d/%d/%d\n", students[i].birthDate.day,students[i].birthDate.month,students[i].birthDate.year);
+                
+                return;
+            }
+            i++;
+        }
+        System.out.println("Student not found.");
+    }
+        //--------------------------------------------------------------------------------
+        public static void Filter(Student[] students) {
+        int i = 0,classNofilter = 0;
+
+        System.out.println("Enter the first name of the student to search: ");
+        classNofilter = scanner.nextInt();
+
+        while (i < studentCount) {
+            if (students[i].numclass.numclass == classNofilter) {
+                System.out.println("Student found!");
+                System.out.println("Student Details:");
+                System.out.printf("Student #%d:\n", i);
+                System.out.printf("Full Name: %S  %S\n",students[i].studentName ,students[i].studentLastName);
+                System.out.printf("Phone: %s \n",students[i].studentPhone);
+                System.out.printf("Address: %s\n", students[i].address);
+                System.out.printf("Class number: %s\n", students[i].numclass.numclass);
+                System.out.printf("Date of birth: %d/%d/%d\n", students[i].birthDate.day,students[i].birthDate.month,students[i].birthDate.year);
+                
+                return;
+            }
+            i++;
+        }
+        System.out.println("Student not found.");
+    }
 }

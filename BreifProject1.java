@@ -50,7 +50,7 @@ public class BreifProject1 {
         //------------------------------------------------------------------------------
         System.out.println("Welcome to the school management software !\n\n");
         
-       /* System.out.println("Please enter your login credentials !\n");
+        System.out.println("Please enter your login credentials !\n");
         
         System.out.println("Username : ");
         username = scanner.nextLine();
@@ -58,7 +58,7 @@ public class BreifProject1 {
         password = scanner.nextLine();
         
      if (username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin") ){
-   */
+   
        do{
          System.out.println("---------------------------------------------------\n");
          System.out.println("Main Menu\n");
@@ -95,7 +95,7 @@ public class BreifProject1 {
                             Student.ListStudents(students);
   			} else if (choice == 5) {
   				 System.out.println("\n== Searching for a student ==\n");
-  		    	//
+                            Student.search(students);
  			} else if (choice == 6) {
  				 System.out.println("\n== adding a class ==\n");
                             Classe.addClasses(classes);
@@ -110,7 +110,7 @@ public class BreifProject1 {
                             Classe.ListClasses(classes);
                         }else if (choice == 10) {
   				 System.out.println("\n== Filtering students by class ==\n");
-  		    	//
+                            Student.Filter(students);
 			} else if (choice == 0) {
     		 	 System.out.println("Exiting the program.\n");
     		}else{
@@ -118,8 +118,8 @@ public class BreifProject1 {
     					}
 	}while (choice != 0);
         
-        /*}else{//authentification 
+        }else{//authentification 
          System.out.println("password or username are incorrect");
-     }*/
+     }
     }
 }
